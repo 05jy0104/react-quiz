@@ -13,37 +13,38 @@ const Admin = () => {
 
   // 静态数据：用户与题目，便于演示分页/增删改
   const [users, setUsers] = useState([
-    { id: 1, date: '2016-05-02', userName: '王小虎', password: '123456' },
-    { id: 2, date: '2016-05-04', userName: '李小明', password: '123456' },
-    { id: 3, date: '2016-05-01', userName: '张三', password: '123456' },
-    { id: 4, date: '2016-05-03', userName: '李四', password: '123456' },
-    { id: 5, date: '2016-05-05', userName: '测试用户1', password: '123456' },
-    { id: 6, date: '2016-05-06', userName: '测试用户2', password: '123456' },
-    { id: 7, date: '2016-05-07', userName: '测试用户3', password: '123456' },
-    { id: 8, date: '2016-05-08', userName: '测试用户4', password: '123456' },
-    { id: 9, date: '2016-05-09', userName: '测试用户5', password: '123456' },
-    { id: 10, date: '2016-05-10', userName: '测试用户6', password: '123456' },
-    { id: 11, date: '2016-05-11', userName: '测试用户7', password: '123456' },
-    { id: 12, date: '2016-05-12', userName: '测试用户8', password: '123456' },
+    { id: 1, date: '2016-05-02', userName: '陈佳烨', password: '123456' },
+    { id: 2, date: '2016-05-04', userName: '小明', password: '123456' },
+    { id: 3, date: '2016-05-01', userName: '土豆', password: '123456' },
+    { id: 4, date: '2016-05-03', userName: 'zyt', password: '123456' },
+    { id: 5, date: '2016-05-05', userName: '张三', password: '123456' },
+    { id: 6, date: '2016-05-06', userName: '李四', password: '123456' },
+    { id: 7, date: '2016-05-07', userName: '王五', password: '123456' },
+    { id: 8, date: '2016-05-08', userName: '测试用户1', password: '123456' },
+    { id: 9, date: '2016-05-09', userName: '测试用户2', password: '123456' },
+    { id: 10, date: '2016-05-10', userName: '测试用户3', password: '123456' },
+    { id: 11, date: '2016-05-11', userName: '测试用户4', password: '123456' },
+    { id: 12, date: '2016-05-12', userName: '测试用户5', password: '123456' },
   ]);
 
   const [questions, setQuestions] = useState([
     {
       id: 1,
-      question: '法国的首都是哪座城市？',
-      optiona: '巴黎',
-      optionb: '伦敦',
-      optionc: '柏林',
-      optiond: '马德里',
-      answer: 'A',
-    },
-    {
-      id: 2,
       question: 'React的生命周期有哪些阶段？',
       optiona: 'componentDidMount',
       optionb: 'componentDidUpdate',
       optionc: 'componentWillUnmount',
       optiond: 'componentWillUnmount',
+      answer: 'A',
+    },
+    {
+      id: 2,
+      
+      question: '法国的首都是哪座城市？',
+      optiona: '巴黎',
+      optionb: '伦敦',
+      optionc: '柏林',
+      optiond: '马德里',
       answer: 'A',
     },
     {
