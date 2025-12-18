@@ -1,54 +1,44 @@
-import { Input, Space, Button, Modal } from 'antd';
+import { Input, Space, Button, Modal, Typography } from 'antd';
 import React, { useState } from 'react';
 import AddQuestion from './AddQuestion';
 
 const { Search } = Input;
+const { Text } = Typography;
 
-const SearchQuestion = ({ onSearch, onAddSuccess }) => {
+const SearchQuestion = ({ onSearch, onAdded }) => {
   const [open, setOpen] = useState(false);
 
   const handleSearch = (value) => {
-   
-
-    
-    if (onSearch && typeof onSearch === 'function') {
-      onSearch(value);
-    }
+    onSearch?.(value?.trim());
   };
 
-  const handleAddSuccess = () => {
+  const handleAddOk = (question) => {
+    onAdded?.(question);
     setOpen(false);
-    if (onAddSuccess) onAddSuccess();
   };
 
   return (
-    <Space style={{ margin: '16px 0 16px 16px' }}>
-      <span style={{ marginRight: '8px', fontSize: '16px' }}>题目</span>
+    <Space direction="horizontal" align="center" style={{ marginBottom: 16 }}>
+      <Text>题目</Text>
       <Search
-        placeholder="请输入关键词"
+        placeholder="请输入关键字"
         allowClear
         enterButton="查询题目"
         size="large"
         onSearch={handleSearch}
-        style={{ width: 300 }}
+        style={{ width: 380 }}
       />
-      
-      <Button 
-        type="primary" 
-        onClick={() => setOpen(true)}
-      >
+      <Button type="primary" size="large" onClick={() => setOpen(true)}>
         添加题目
       </Button>
-      
       <Modal
         title="添加题目"
         open={open}
-        onCancel={() => setOpen(false)}
         footer={null}
-        width={600}
+        onCancel={() => setOpen(false)}
+        destroyOnClose
       >
-        <AddQuestion onSuccess={handleAddSuccess} 
-        onCancel={() => setOpen(false)}/>
+        <AddQuestion onSuccess={handleAddOk} />
       </Modal>
     </Space>
   );
